@@ -1,8 +1,8 @@
 const mongoose = require('mongoose');
-const mongoURI = 'mongodb+srv://suvinkrsingh:gaqxkvMYPmySMGR2@merncluster.e2vggzr.mongodb.net/Frizzle?retryWrites=true&w=majority';
+require('dotenv').config();
 mongoose.set('strictQuery', false);
 const mongoDB = async () => {
-    await mongoose.connect(mongoURI, { useNewUrlParser: true }, async (err, result) => {
+    await mongoose.connect(process.env.URI, { useNewUrlParser: true }, async (err, result) => {
         if (err) console.log("---", err)
         else {
             console.log("connected");

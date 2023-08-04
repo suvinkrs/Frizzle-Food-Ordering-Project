@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import { Link } from 'react-router-dom'
+import Navbar from '../components/Navbar';
 
 export default function Signup() {
     const [credentials, setcredentials] = useState({ name: "", email: "", password: "", geolocation: "" })
@@ -18,16 +19,19 @@ export default function Signup() {
         if (!json.success) {
             alert("Enter Valid Credentials")
         }
-        
+
     }
     const onChange = (event) => {
         setcredentials({ ...credentials, [event.target.name]: event.target.value })
     }
 
     return (
-        <>
+        <><div>
+            <div>
+                <Navbar/>
+            </div>
             <div className='container'>
-                <form onSubmit={handleSubmit}>
+                <form className='w-50 p-5 m-auto mt-5 border bg-dark rounded' onSubmit={handleSubmit}>
                     <div className="mb-3">
                         <label htmlFor="name" className="form-label">Name</label>
                         <input type="text" className="form-control" name='name' value={credentials.name} onChange={onChange} />
@@ -49,6 +53,7 @@ export default function Signup() {
                     <Link to="/login" className='m-3 btn btn-danger'>Already a user</Link>
                 </form>
             </div>
+        </div>
         </>
     )
 }
