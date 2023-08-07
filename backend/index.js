@@ -9,7 +9,7 @@ app.use(cors());
 mongoDB();  
 //middleware
 app.use((req,res,next)=>{
-  res.setHeader("Access-Control-Allow-Origin","https://frizzlefeast.com");
+  res.setHeader("Access-Control-Allow-Origin","https://www.frizzlefeast.com/");
   res.header(
     "Access-Control-Allow-Headers",
     "Origin, X-Requested-With, Content-Type, Accept"
