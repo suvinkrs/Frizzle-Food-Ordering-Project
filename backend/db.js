@@ -1,5 +1,5 @@
 const mongoose = require('mongoose');
-const mongoURI = 'mongodb+srv://suvinkrsingh:gaqxkvMYPmySMGR2@merncluster.e2vggzr.mongodb.net/Frizzle?retryWrites=true&w=majority';
+const mongoURI = 'mongodb+srv://suvinkrsingh:<password>@merncluster.e2vggzr.mongodb.net/Frizzle?retryWrites=true&w=majority';
 mongoose.set('strictQuery', false);
 const mongoDB = async () => {
     await mongoose.connect(mongoURI, { useNewUrlParser: true }, async (err, result) => {
