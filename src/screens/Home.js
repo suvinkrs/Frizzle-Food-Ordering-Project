@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react'
 import Navbar from '../components/Navbar'
 import Footer from '../components/Footer'
 import Card from '../components/Card'
+import {api} from '../service/helper'
 
 export default function Home() {
     const [search, setSearch] = useState('');
@@ -9,7 +10,7 @@ export default function Home() {
     const [foodItem, setFoodItem] = useState([]);
 
     const loadData = async () => {
-        let response = await fetch("http://localhost:5000/api/foodData", {
+        let response = await fetch(`${api}/api/foodData`, {
             method: "POST",
             headers: {
                 'Content-Type': 'application/json'
@@ -29,7 +30,7 @@ export default function Home() {
 
 
     return (
-        <div>
+        <div style={{ backgroundColor: '#D8D9DA' }}>
             <div> <Navbar /> </div>
             <div><div id="carouselExampleFade" className="carousel slide carousel-fade" data-bs-ride="carousel" style={{ objectFit: "contain !important" }}>
                 <div className="carousel-inner" id='carousel'>
@@ -58,7 +59,7 @@ export default function Home() {
                     <span className="visually-hidden">Next</span>
                 </button>
             </div></div>
-            <div className='container'>
+            <div className='container' >
                 {
                     foodCat !== []
                         ? foodCat.map((data) => {

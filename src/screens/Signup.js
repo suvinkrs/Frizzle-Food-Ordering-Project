@@ -1,12 +1,13 @@
 import React, { useState } from 'react'
 import { Link } from 'react-router-dom'
 import Navbar from '../components/Navbar';
+import { api } from '../service/helper';
 
 export default function Signup() {
     const [credentials, setcredentials] = useState({ name: "", email: "", password: "", geolocation: "" })
     const handleSubmit = async (e) => {
         e.preventDefault();
-        const response = await fetch("http://localhost:5000/api/createuser", {
+        const response = await fetch(`${api}/api/createuser`, {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
@@ -30,8 +31,8 @@ export default function Signup() {
             <div>
                 <Navbar/>
             </div>
-            <div className='container'>
-                <form className='w-50 p-5 m-auto mt-5 border bg-dark rounded' onSubmit={handleSubmit}>
+            <div className='container '>
+                <form className='w-50 p-5 m-auto mt-5 border rounded '  onSubmit={handleSubmit}>
                     <div className="mb-3">
                         <label htmlFor="name" className="form-label">Name</label>
                         <input type="text" className="form-control" name='name' value={credentials.name} onChange={onChange} />
@@ -57,3 +58,6 @@ export default function Signup() {
         </>
     )
 }
+// const formStyle={
+//     backgroundColor: "grey",
+// };
