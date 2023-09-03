@@ -27,8 +27,6 @@ This project is a full-stack e-commerce website built on the MERN (MongoDB, Expr
 - **Frontend**:
   - React
   - React Router
-  - Axios (for API requests)
-  - Context API (for state management)
   - Component Library (navbar, footer, cards)
 
 - **Backend**:
@@ -38,8 +36,8 @@ This project is a full-stack e-commerce website built on the MERN (MongoDB, Expr
   - JWT (JSON Web Tokens) for authentication
 
 - **Deployment**:
-  - Heroku (backend)
-  - Netlify (frontend)
+  - Render (backend)
+  - Vercel (frontend)
 
 ## Installation
 
