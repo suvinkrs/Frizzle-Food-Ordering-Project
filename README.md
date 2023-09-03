@@ -1,4 +1,4 @@
-# Project Name: MERN Stack E-commerce Website
+# Frizzle: MERN Stack E-commerce Website
 
 ## Table of Contents
 
